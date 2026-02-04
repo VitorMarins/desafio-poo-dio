@@ -2,6 +2,7 @@ import br.com.dio.desafio.dominio.Bootcamp;
 import br.com.dio.desafio.dominio.Curso;
 import br.com.dio.desafio.dominio.Dev;
 import br.com.dio.desafio.dominio.Mentoria;
+import br.com.dio.desafio.dominio.Aluno;
 
 import java.time.LocalDate;
 
@@ -22,9 +23,23 @@ public class Main {
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
+        // --- Implementação da classe Aluno ---
+
+        Aluno aluno1 = new Aluno();
+        aluno1.setNome("Carlos");
+        aluno1.setGenero('M');
+
+        // Como a classe Aluno usa um Array fixo (Curso[]),
+        // precisamos definir o tamanho dele antes de atribuir.
+        Curso[] listaCursos = {curso1, curso2};
+        aluno1.setCursos(listaCursos);
+
+        System.out.println("Aluno: " + aluno1.getNome());
+        System.out.println("Gênero: " + aluno1.getGenero());
+        System.out.println("Quantidade de cursos: " + aluno1.getCursos().length);
+
+        System.out.println("-------");
+        // --- Fim da implementação Aluno ---
 
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
